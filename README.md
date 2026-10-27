@@ -35,7 +35,8 @@ The 8086 microprocessor is a 16-bit microprocessor developed by Intel. It has a 
 2. Execution Unit (EU)
 Block Diagram
 
-     <img width="1026" height="622" alt="image" src="https://github.com/user-attachments/assets/dc4fe676-f4c2-4ac1-9f28-17900d15016d" />
+     <img width="1112" height="712" alt="image" src="https://github.com/user-attachments/assets/1dda1320-ed83-4792-894f-dd0e70a06c67" />
+
 
 
 Functions of BIU and EU
