@@ -29,70 +29,16 @@ between two memory locations using registers.
 Explain the architecture of the 8086 microprocessor with a neat block
 diagram, describing the functions of the BIU and EU.
 
-### Theory
+Architecture of 8086 Microprocessor
+The 8086 microprocessor is a 16-bit microprocessor developed by Intel. It has a 16-bit data bus, a 20-bit address bus, and can access up to 1 MB of memory. Its architecture is divided into two main units:
+1. Bus Interface Unit (BIU)
+2. Execution Unit (EU)
+Block Diagram
 
-The Intel 8086 is a 16-bit microprocessor with a 16-bit data bus and a
-20-bit address bus. It can address up to 1 MB of physical memory. Its
-architecture is divided into two major units:
+               <img width="987" height="607" alt="image" src="https://github.com/user-attachments/assets/24dafa5e-9ac7-4438-83b0-f696de551dc6" />
 
-**1. Bus Interface Unit (BIU)** - Generates the 20-bit physical
-address. - Fetches instructions from memory. - Reads data from and
-writes data to memory and I/O devices. - Contains the segment registers:
-CS, DS, SS, and ES. - Contains the Instruction Pointer (IP). - Includes
-a 6-byte instruction prefetch queue, allowing instruction fetching and
-execution to overlap.
 
-**2. Execution Unit (EU)** - Decodes and executes instructions fetched
-by the BIU. - Contains the Arithmetic Logic Unit (ALU). - Contains
-general-purpose registers AX, BX, CX, and DX, which can be accessed as
-8-bit halves. - Contains pointer and index registers SP, BP, SI, and
-DI. - Contains the Flag Register, which records status and control
-flags. - Requests the BIU to perform memory and I/O transfers when
-required.
 
-### Simplified Block Diagram
-
-``` text
-                 +-----------------------------------+
-                 |          8086 MICROPROCESSOR     |
-                 |                                   |
-Memory / I/O <-->+-----------------------------------+<--> System Bus
-                 |       Bus Interface Unit (BIU)    |
-                 |  +-----------------------------+  |
-                 |  | Segment Registers            |  |
-                 |  | CS, DS, SS, ES               |  |
-                 |  +-----------------------------+  |
-                 |  | Instruction Pointer (IP)     |  |
-                 |  +-----------------------------+  |
-                 |  | 6-byte Instruction Queue     |  |
-                 |  +-----------------------------+  |
-                 |  | Address Generation / Bus     |  |
-                 |  | Control                      |  |
-                 |  +---------------+-------------+  |
-                 |                  |                |
-                 |       Instruction/Data Interface  |
-                 |                  |                |
-                 |       Execution Unit (EU)         |
-                 |  +-----------------------------+  |
-                 |  | Instruction Decoder &       |  |
-                 |  | Control Circuitry           |  |
-                 |  +-----------------------------+  |
-                 |  | ALU                         |  |
-                 |  +-----------------------------+  |
-                 |  | AX, BX, CX, DX               |  |
-                 |  | SP, BP, SI, DI               |  |
-                 |  | Flag Register                |  |
-                 |  +-----------------------------+  |
-                 +-----------------------------------+
-```
-
-### Working Principle
-
-The BIU fetches instruction bytes and stores them in its 6-byte queue
-while the EU executes instructions already available in the queue. When
-the EU needs memory or I/O access, it requests the BIU to perform the
-bus operation. A change in program flow, such as a jump, may cause the
-instruction queue to be flushed and refilled.
 
 ------------------------------------------------------------------------
 
