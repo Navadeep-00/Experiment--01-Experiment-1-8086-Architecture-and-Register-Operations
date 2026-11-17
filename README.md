@@ -181,6 +181,7 @@ Part (b): Transfer a 16-bit Value Between Registers and Store It in Memory
 
 Part (c): Exchange Two 16-bit Memory Locations Using Registers
 
+<img width="426" height="425" alt="image" src="https://github.com/user-attachments/assets/50fb9c1b-eaca-46eb-967c-dd26f7a5577a" />
 
 
 ## Result
