@@ -78,24 +78,10 @@ from one register to another and store the result in memory.
 
 ### Assembly Program
 
-.MODEL SMALL
-.STACK 100H
-.DATA
-RESULT DW ?
-
-.CODE
-MAIN PROC
-    MOV AX, @DATA
-    MOV DS, AX
-
-    MOV AX, 1234H
-    MOV BX, AX
-    MOV RESULT, BX
-
-    MOV AH, 4CH
-    INT 21H
-MAIN ENDP
-END MAIN
+MOV AX, 1234H
+MOV BX, AX
+MOV [2000H], BX
+HLT
 
 ### Expected Result
 
@@ -129,27 +115,19 @@ Write an 8086 assembly language program to exchange the contents of two
 
 ### Assembly Program
 
- .MODEL SMALL
-.STACK 100H
-.DATA
-NUM1 DW 1234H
-NUM2 DW 5678H
+MOV AX, 1234H
+MOV [2000H], AX
 
-.CODE
-MAIN PROC
-    MOV AX, @DATA
-    MOV DS, AX
+MOV AX, 5678H
+MOV [2002H], AX
 
-    MOV AX, NUM1
-    MOV BX, NUM2
+MOV AX, [2000H]
+MOV BX, [2002H]
 
-    MOV NUM1, BX
-    MOV NUM2, AX
+MOV [2000H], BX
+MOV [2002H], AX
 
-    MOV AH, 4CH
-    INT 21H
-MAIN ENDP
-END MAIN
+HLT
  
 
 ### Expected Result
