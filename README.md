@@ -175,6 +175,11 @@ The program starts by initializing the data segment using MOV AX, @DATA and MOV 
 7.  Record the observed results and compare them with the expected
     results.
 ## Screenshot of the results 
+Part (b): Transfer a 16-bit Value Between Registers and Store It in Memory
+
+<img width="421" height="422" alt="image" src="https://github.com/user-attachments/assets/63f9e9a7-80e5-4397-b738-0c57fc9f2773" />
+
+Part (c): Exchange Two 16-bit Memory Locations Using Registers
 
 
 
